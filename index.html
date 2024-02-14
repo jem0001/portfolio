@@ -11,7 +11,7 @@
     />
   </head>
   <body>
-    <nav class="bg-secondary fixed top-0 left-0 w-full z-50">
+    <nav class="bg-secondary w-full z-10 fixed">
       <div
         class="container text-white mx-auto p-3 flex justify-between items-center lg:px-12"
       >
@@ -38,11 +38,41 @@
             <a href="#contacts">Contacts</a>
           </li>
         </ul>
-        <div class="block md:hidden">
+        <div class="block md:hidden" id="menu">
           <i class="fa-2x fa fa-bars"></i>
         </div>
       </div>
+
+      <div
+        class="bg-tansparent w-full h-full fixed ease-in-out duration-200 left-[100%]"
+        id="sidebar"
+      >
+        <ul
+          class="text-white bg-primary w-[60%] absolute right-0 text-xl flex flex-col space-y-4 p-8 rounded-md items-center"
+        >
+          <li class="hover:text-accent">
+            <a href="#about" class="">About</a>
+          </li>
+          <div class="h-[1px] bg-gray-500 w-full"></div>
+          <li class="hover:text-accent">
+            <a href="#education">Education</a>
+          </li>
+          <div class="h-[1px] bg-gray-500 w-full"></div>
+          <li class="hover:text-accent">
+            <a href="#skills">Skills</a>
+          </li>
+          <div class="h-[1px] bg-gray-500 w-full"></div>
+          <li class="hover:text-accent">
+            <a href="#projects">Projects</a>
+          </li>
+          <div class="h-[1px] bg-gray-500 w-full"></div>
+          <li class="hover:text-accent">
+            <a href="#contacts">Contacts</a>
+          </li>
+        </ul>
+      </div>
     </nav>
+
     <section id="hero" class="bg-secondary text-white">
       <div
         class="container mx-auto py-16 px-4 text-center h-screen grid place-items-center md:grid-cols-2 space-x-20"
@@ -51,12 +81,13 @@
           <p class="text-3xl text-accent">Hello, I'm</p>
           <h1 class="text-8xl font-bold">Jemuel</h1>
           <h1 class="text-8xl font-bold pb-4">Salcedo</h1>
-          <p class="text-gray-400 text-3xl pb-4">Web Developer</p>
-          <button
-            class="text-black bg-accent px-16 py-4 rounded-full font-bold shadow-white hover:text-white shadow-md hover:scale-105"
+          <p class="text-gray-400 text-3xl pb-4">Future Web Developer</p>
+          <a
+            href="#contacts"
+            class="text-black bg-accent px-16 py-4 rounded-full font-bold shadow-white hover:text-white shadow-md hover:scale-105 ease-in-out duration-200 block mt-8"
           >
             Contact Me
-          </button>
+          </a>
         </div>
         <img
           src="images/about.png"
@@ -185,7 +216,10 @@
         <h1 class="title">Education</h1>
         <div>
           <div class="flex space-x-8 pb-4 items-baseline">
-            <i class="fa-2x fa fa-bars"></i>
+            <i
+              class="text-white fa-3x fa fa-graduation-cap"
+              aria-hidden="true"
+            ></i>
             <h1 class="text-white text-4xl h-fit font-medium">Education</h1>
           </div>
 
@@ -340,24 +374,27 @@
           <div class="">
             <h1 class="haccent text-white">Contact Information</h1>
             <div class="flex items-center space-x-8 pb-4">
-              <i class="fa-2x fa fa-bars"></i>
+              <i class="text-white fa-2x fa fa-envelope" aria-hidden="true"></i>
               <div>
                 <h1 class="text-2xl text-white">Email</h1>
                 <p class="text-gray-400">salcedojemuel25@gmail.com</p>
               </div>
             </div>
             <div class="flex items-center space-x-8 pb-4">
-              <i class="fa-2x fa fa-bars"></i>
+              <i class="text-white fa-2x fa fa-phone" aria-hidden="true"></i>
               <div>
                 <h1 class="text-2xl text-white">Phone</h1>
                 <p class="text-gray-400">09123456789</p>
               </div>
             </div>
             <div class="flex items-center space-x-8 pb-4">
-              <i class="fa-2x fa fa-bars"></i>
+              <i
+                class="text-white fa-2x fa fa-address-card"
+                aria-hidden="true"
+              ></i>
               <div>
                 <h1 class="text-2xl text-white">Address</h1>
-                <p class="text-gray-400">Lusacan, Tiaon,g Quezon</p>
+                <p class="text-gray-400">Lusacan, Tiaong, Quezon</p>
               </div>
             </div>
           </div>
@@ -381,4 +418,20 @@
       </p>
     </footer>
   </body>
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const menu = document.getElementById("menu");
+
+    menu.addEventListener("click", () => {
+      if (sidebar.style.left === "100%") {
+        sidebar.style.left = "0";
+      } else {
+        sidebar.style.left = "100%";
+      }
+    });
+
+    sidebar.addEventListener("click", () => {
+      sidebar.style.left = "100%";
+    });
+  </script>
 </html>
