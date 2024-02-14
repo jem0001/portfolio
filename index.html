@@ -44,11 +44,11 @@
       </div>
 
       <div
-        class="bg-tansparent w-full h-full fixed ease-in-out duration-200 left-[100%]"
+        class="bg-tansparent w-full h-full fixed ease-in-out duration-200 left-[100%] md:hidden"
         id="sidebar"
       >
         <ul
-          class="text-white bg-primary w-[60%] absolute right-0 text-xl flex flex-col space-y-4 p-8 rounded-md items-center"
+          class="text-white bg-primary w-[60%] absolute right-0 text-xl flex flex-col space-y-4 p-8 items-center shadow-accent shadow-md rounded-bl-md"
         >
           <li class="hover:text-accent">
             <a href="#about" class="">About</a>
@@ -338,7 +338,7 @@
 
     <!-- Contact -->
     <section id="contacts" class="bg-primary">
-      <div class="container py-16 px-4 mx-auto">
+      <div class="container md:max-w-[900px] py-16 px-4 mx-auto">
         <h1 class="title">Contact Me</h1>
         <div class="grid grid-col-1 md:grid-cols-2 space-y-8">
           <form
@@ -371,7 +371,7 @@
               placeholder="Your message"
             ></textarea>
           </form>
-          <div class="">
+          <div>
             <h1 class="haccent text-white">Contact Information</h1>
             <div class="flex items-center space-x-8 pb-4">
               <i class="text-white fa-2x fa fa-envelope" aria-hidden="true"></i>
